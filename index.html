@@ -1,0 +1,70 @@
+<!-- paste into your HTML file -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Omar Hegazy</title>
+  <head>
+  <link rel="stylesheet" href="omar hegazy.CSS">
+</head>
+  <style>
+    /* fixed size */
+    .fixed-video { width: 640px; height: 360px; }
+
+    /* responsive (use instead of fixed sizes) */
+    .responsive-video { max-width: 100%; height: auto; display: block; }
+    .controls { margin-top: 8px; gap:8px; }
+  </style>
+</head>
+<body>
+<h1>This Video of Omar hegazy</h1> 
+<h2>Who's omar hegazy</h2>
+<p>Omar Hegazy is an Egyptian banker turned pro-athlete. After losing his leg in a 2015 motorcycle crash, he refused to stop moving.
+He became the first amputee to swim from Jordan to Egypt (20km) and broke two Guinness World Records for underwater swimming on a single breath. He now spends his time as a motivational speaker, proving that "limitation" is just a mindset.
+</p>
+<div style="display:flex;justify-content: center;">
+<video id="video1" class="fixed-video" controls>
+    <source src="compressed-uKtHXlL4.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>  
+<!-- Simple video with browser controls and explicit width/height -->
+
+
+  <!-- Responsive video (uncomment to use) -->
+  <!-- <video id="video1" class="responsive-video" controls> ... </video> -->
+
+  <!-- Custom controls -->
+  <div class="controls" style="display: flex;justify-content: center; align-items:center ;">
+    <button id="playBtn">Play</button>
+    <button id="pauseBtn">Pause</button>
+    <button id="rewindBtn">-10s</button>
+    <button id="forwardBtn">+10s</button>
+    <label>Volume <input id="vol" type="range" min="0" max="1" step="0.01" value="1"></label>
+    <label>Speed <input id="speed" type="number" step="0.25" value="1" min="0.25" max="3"></label>
+    <button id="fsBtn">Fullscreen</button>
+  </div>
+
+  <script>
+    const v = document.getElementById('video1');
+    document.getElementById('playBtn').onclick = () => v.play();
+    document.getElementById('pauseBtn').onclick = () => v.pause();
+    document.getElementById('rewindBtn').onclick = () => v.currentTime = Math.max(0, v.currentTime - 10);
+    document.getElementById('forwardBtn').onclick = () => v.currentTime = Math.min(v.duration || Infinity, v.currentTime + 10);
+    document.getElementById('vol').oninput = e => v.volume = e.target.value;
+    document.getElementById('speed').oninput = e => v.playbackRate = parseFloat(e.target.value);
+    document.getElementById('fsBtn').onclick = () => {
+      if (v.requestFullscreen) v.requestFullscreen();
+      else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+    };
+  </script>
+  <hr>
+  <hr>
+  <header>This Omar hegazy project was for the <strong>English Magazine</strong> or the <strong>English club
+  </strong> and that's all was <i>100 %</i> <strong>by me (Oudai Ossama)</strong> and this html web page was made 
+for <i>the english teacher</i> <strong>MR.Ahmed Torki</strong> and the page is talking about the 
+<i>best egyptian swimmer who broke 2 guniess world record and swamed the <mark>THE AGABA GULF</mark> just in 8 hours 
+is</i> <strong>Omar Hegazy</strong></header><a href="https://github.com/Ouvbx3">My GitHub Account</a>
+
+</body>
+</html>
